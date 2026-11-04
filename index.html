@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sergej Braznikov — CTO</title>
+  <meta name="description" content="Sergej Braznikov — technology executive in Berlin. Former CTO at Spryker. Enterprise software, cloud, AI-native engineering and operational efficiency.">
+  <meta property="og:title" content="Sergej Braznikov — CTO">
+  <meta property="og:description" content="Technology executive. Former CTO at Spryker. Cloud, AI & operational efficiency.">
+  <meta property="og:image" content="assets/sergej-braznikov.jpg">
+  <meta property="og:type" content="profile">
+  <meta name="theme-color" content="#f6f5f1">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f5f1;
+      --surface: #ffffff;
+      --ink: #16181d;
+      --muted: #5d6270;
+      --line: #e3e1da;
+      --accent: #1f6f5c;
+      --accent-soft: #e3efe9;
+      --radius: 18px;
+      --max: 1080px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121418;
+        --surface: #1a1d22;
+        --ink: #eceae4;
+        --muted: #9a9fab;
+        --line: #2a2e35;
+        --accent: #6cc4a8;
+        --accent-soft: #1c2c27;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header.top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 0;
+    }
+    .mark { font-weight: 700; letter-spacing: -0.02em; text-decoration: none; }
+    .mark span { color: var(--accent); }
+    nav a {
+      text-decoration: none; color: var(--muted); font-size: 15px; margin-left: 24px;
+      transition: color .2s;
+    }
+    nav a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero {
+      display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center;
+      padding: 48px 0 88px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 500; color: var(--accent);
+      background: var(--accent-soft); padding: 6px 12px; border-radius: 999px;
+    }
+    .eyebrow::before {
+      content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    }
+    h1 {
+      font-size: clamp(44px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -0.035em;
+      font-weight: 700; margin: 22px 0 18px;
+    }
+    .role { font-size: clamp(19px, 2vw, 22px); color: var(--muted); margin: 0 0 28px; max-width: 34ch; }
+    .role strong { color: var(--ink); font-weight: 600; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 20px; border-radius: 12px; font-weight: 500; font-size: 16px;
+      text-decoration: none; border: 1px solid var(--line); background: var(--surface);
+      transition: transform .15s, border-color .2s;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: var(--muted); }
+    .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .btn svg { width: 18px; height: 18px; }
+
+    .portrait {
+      position: relative; border-radius: 28px; overflow: hidden;
+      aspect-ratio: 4 / 4.6; background: #2a2b2f;
+      box-shadow: 0 30px 60px -30px rgba(0,0,0,.35);
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+    .portrait .tag {
+      position: absolute; left: 16px; bottom: 16px;
+      background: rgba(255,255,255,.92); color: #16181d; backdrop-filter: blur(6px);
+      padding: 8px 14px; border-radius: 12px; font-size: 14px; font-weight: 500;
+    }
+
+    /* Sections */
+    section { padding: 72px 0; border-top: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: 260px 1fr; gap: 40px; }
+    h2 {
+      font-size: 14px; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--muted); font-weight: 600; margin: 6px 0 0;
+    }
+    .lead { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; letter-spacing: -0.015em; margin: 0; }
+    .lead + p { color: var(--muted); margin-top: 20px; max-width: 62ch; }
+
+    /* Numbers */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--line); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; margin-top: 48px;
+    }
+    .stat { background: var(--surface); padding: 28px 24px; }
+    .stat b { display: block; font-size: 40px; letter-spacing: -0.03em; line-height: 1.1; font-weight: 600; }
+    .stat span { color: var(--muted); font-size: 15px; }
+
+    /* Focus cards */
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 28px;
+    }
+    .card .ico {
+      width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+      background: var(--accent-soft); color: var(--accent); margin-bottom: 18px;
+    }
+    .card .ico svg { width: 20px; height: 20px; }
+    .card h3 { margin: 0 0 8px; font-size: 19px; letter-spacing: -0.01em; font-weight: 600; }
+    .card p { margin: 0; color: var(--muted); font-size: 16px; }
+
+    /* Timeline */
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
+      display: grid; grid-template-columns: 170px 1fr; gap: 24px;
+      padding: 26px 0; border-bottom: 1px solid var(--line);
+    }
+    .timeline li:first-child { padding-top: 0; }
+    .timeline li:last-child { border-bottom: 0; }
+    .when { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; padding-top: 2px; }
+    .what h3 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+    .what .org { color: var(--accent); font-weight: 500; }
+    .what p { margin: 8px 0 0; color: var(--muted); font-size: 16px; }
+    .roles { margin: 10px 0 0; padding: 0; list-style: none; font-size: 15px; color: var(--muted); }
+    .roles li { display: block; padding: 2px 0; border: 0; }
+    .roles li b { color: var(--ink); font-weight: 500; }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .pill {
+      border: 1px solid var(--line); background: var(--surface);
+      padding: 6px 12px; border-radius: 999px; font-size: 15px;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--ink); color: var(--bg); border-radius: 28px;
+      padding: 56px; margin: 16px 0 40px;
+      display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: end;
+    }
+    .contact h2 { color: inherit; opacity: .6; }
+    .contact p.big { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.15; letter-spacing: -0.025em; margin: 16px 0 0; font-weight: 600; }
+    .contact .links { display: grid; gap: 10px; }
+    .contact .links a {
+      display: flex; justify-content: space-between; align-items: center;
+      text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(128,128,128,.35);
+      font-size: 17px;
+    }
+    .contact .links a:hover span:last-child { transform: translateX(4px); }
+    .contact .links span:last-child { transition: transform .2s; }
+
+    footer { color: var(--muted); font-size: 14px; padding: 0 0 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 24px; }
+      .portrait { max-width: 420px; aspect-ratio: 1 / 1.05; }
+      .section-head { grid-template-columns: 1fr; gap: 20px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .contact { grid-template-columns: 1fr; padding: 36px 28px; }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      nav { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 1fr; gap: 6px; }
+      .stat b { font-size: 32px; }
+      section { padding: 56px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="mark" href="#">Sergej Braznikov<span>.</span></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div>
+          <span class="eyebrow">Berlin, Germany</span>
+          <h1>Sergej<br>Braznikov</h1>
+          <p class="role"><strong>Technology executive &amp; CTO.</strong> Building and scaling international engineering organisations in enterprise software — with a focus on cloud, AI and operational efficiency.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:sergej.braznikov@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Get in touch
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/sbraznikov/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.83v1.5h.06c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13v5.43h-4v-4.81c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.89h-4v-11Z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <figure class="portrait" style="margin:0">
+          <img src="assets/sergej-braznikov.jpg" alt="Portrait of Sergej Braznikov" width="900" height="719">
+          <figcaption class="tag">Ex-CTO, Spryker</figcaption>
+        </figure>
+      </div>
+
+      <section id="about">
+        <div class="section-head">
+          <h2>About</h2>
+          <div>
+            <p class="lead">For ten years I helped build Spryker — from an early-stage engineering team to a 200+ person technology organisation across five countries, serving enterprise customers like ALDI, Siemens Healthineers and Ricoh.</p>
+            <p>As CTO I owned technology strategy, delivery, operations and budget, led the move from on-premises software to managed cloud services, and introduced AI into engineering and 24/7 operations. Today I'm co-founding a healthtech venture and building it AI-native from day one.</p>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>200+</b><span>people led at peak</span></div>
+          <div class="stat"><b>5</b><span>countries, one org</span></div>
+          <div class="stat"><b>−30%</b><span>cloud costs, 2024–2025</span></div>
+          <div class="stat"><b>185</b><span>hires in a single year</span></div>
+        </div>
+      </section>
+
+      <section id="focus">
+        <div class="section-head">
+          <h2>Focus</h2>
+          <div class="cards">
+            <div class="card">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19h11.5Z"/></svg></div>
+              <h3>Cloud &amp; SaaS</h3>
+              <p>Launched managed cloud services and the operating model behind them; expanded the platform's SaaS capabilities.</p>
+            </div>
+            <div class="card">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <h3>AI-native engineering</h3>
+              <p>AI Innovation Team, AI-based QA across seven workstreams, AI in support and alerting — plus the AI SDK and MCP integration.</p>
+            </div>
+            <div class="card">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+              <h3>Operational efficiency</h3>
+              <p>Consolidated five delivery units into three, cut cloud spend by 30% and aligned engineering capacity with business priorities.</p>
+            </div>
+            <div class="card">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+              <h3>M&amp;A &amp; due diligence</h3>
+              <p>Technology assessments of 6+ acquisition targets and a repeatable due diligence framework for decision-making.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <ol class="timeline">
+            <li>
+              <div class="when">2026 — now</div>
+              <div class="what">
+                <h3>Co-founder <span class="org">· Healthtech venture (stealth)</span></h3>
+                <p>Pre-seed software for preventive health and tracking health indicators. Working prototype built by a team of two with AI agents and automated verification.</p>
+              </div>
+            </li>
+            <li>
+              <div class="when">2015 — 2025</div>
+              <div class="what">
+                <h3>Spryker Systems <span class="org">· B2B SaaS, enterprise commerce</span></h3>
+                <ul class="roles">
+                  <li><b>Chief Technology Officer</b> · 2021–2025</li>
+                  <li><b>VP Technology</b> · 2019–2021</li>
+                  <li><b>VP of Engineering</b> · 2015–2018</li>
+                </ul>
+                <p>Executive leadership team member since 2016. Reported to the CEO, led eight technology leaders across engineering, architecture, cloud operations, support, security and quality. Gartner Magic Quadrant Leader for Digital Commerce, 2024.</p>
+              </div>
+            </li>
+            <li>
+              <div class="when">2011 — 2015</div>
+              <div class="what">
+                <h3>Open Source E-commerce Domain Lead <span class="org">· CGI</span></h3>
+                <p>Led commerce technology teams of 30+ people across three locations for retail, industrial, publishing and banking clients.</p>
+              </div>
+            </li>
+            <li>
+              <div class="when">2006 — 2011</div>
+              <div class="what">
+                <h3>Developer → Team Lead → CTO <span class="org">· symmetrics</span></h3>
+                <p>Magento commerce agency, later acquired by CGI Germany.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>Languages</h2>
+          <div class="pills">
+            <span class="pill">German — native-level</span>
+            <span class="pill">Russian — native</span>
+            <span class="pill">English — professional</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="contact" id="contact">
+        <div>
+          <h2>Contact</h2>
+          <p class="big">Open to conversations about technology leadership, advisory and board roles.</p>
+        </div>
+        <div class="links">
+          <a href="mailto:sergej.braznikov@gmail.com"><span>sergej.braznikov@gmail.com</span><span>→</span></a>
+          <a href="https://www.linkedin.com/in/sbraznikov/" target="_blank" rel="noopener"><span>linkedin.com/in/sbraznikov</span><span>↗</span></a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>© <span id="y">2026</span> Sergej Braznikov</span>
+      <span>Berlin, Germany</span>
+    </footer>
+  </div>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
