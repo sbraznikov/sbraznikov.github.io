@@ -114,18 +114,7 @@
       font-size: 14px; text-transform: uppercase; letter-spacing: .12em;
       color: var(--muted); font-weight: 600; margin: 6px 0 0;
     }
-    .lead { font-size: clamp(22px, 2.4vw, 28px); line-height: 1.4; letter-spacing: -0.015em; margin: 0; }
-    .lead + p { color: var(--muted); margin-top: 20px; max-width: 62ch; }
 
-    /* Numbers */
-    .stats {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
-      background: var(--line); border: 1px solid var(--line); border-radius: var(--radius);
-      overflow: hidden; margin-top: 48px;
-    }
-    .stat { background: var(--surface); padding: 28px 24px; }
-    .stat b { display: block; font-size: 40px; letter-spacing: -0.03em; line-height: 1.1; font-weight: 600; }
-    .stat span { color: var(--muted); font-size: 15px; }
 
     /* Focus cards */
     .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -187,7 +176,6 @@
       .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 24px; }
       .portrait { max-width: 420px; aspect-ratio: 1 / 1.05; }
       .section-head { grid-template-columns: 1fr; gap: 20px; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
       .contact { grid-template-columns: 1fr; padding: 36px 28px; }
     }
     @media (max-width: 600px) {
@@ -195,7 +183,6 @@
       nav { display: none; }
       .cards { grid-template-columns: 1fr; }
       .timeline li { grid-template-columns: 1fr; gap: 6px; }
-      .stat b { font-size: 32px; }
       section { padding: 56px 0; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -209,7 +196,6 @@
     <header class="top">
       <a class="mark" href="#">Sergej Braznikov<span>.</span></a>
       <nav>
-        <a href="#about">About</a>
         <a href="#focus">Focus</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -221,7 +207,7 @@
         <div>
           <span class="eyebrow">Berlin, Germany</span>
           <h1>Sergej<br>Braznikov</h1>
-          <p class="role"><strong>Technology executive &amp; CTO.</strong> Building and scaling international engineering organisations in enterprise software — with a focus on cloud, AI and operational efficiency.</p>
+          <p class="role"><strong>Technology executive &amp; CTO.</strong> Building and scaling international engineering organisations in enterprise software, with a focus on cloud, AI and operational efficiency.</p>
           <div class="actions">
             <a class="btn primary" href="mailto:sergej.braznikov@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -239,45 +225,29 @@
         </figure>
       </div>
 
-      <section id="about">
-        <div class="section-head">
-          <h2>About</h2>
-          <div>
-            <p class="lead">For ten years I helped build Spryker — from an early-stage engineering team to a 200+ person technology organisation across five countries, serving enterprise customers like ALDI, Siemens Healthineers and Ricoh.</p>
-            <p>As CTO I owned technology strategy, delivery, operations and budget, led the move from on-premises software to managed cloud services, and introduced AI into engineering and 24/7 operations. Today I'm co-founding a healthtech venture and building it AI-native from day one.</p>
-          </div>
-        </div>
-        <div class="stats">
-          <div class="stat"><b>200+</b><span>people led at peak</span></div>
-          <div class="stat"><b>5</b><span>countries, one org</span></div>
-          <div class="stat"><b>−30%</b><span>cloud costs, 2024–2025</span></div>
-          <div class="stat"><b>185</b><span>hires in a single year</span></div>
-        </div>
-      </section>
-
       <section id="focus">
         <div class="section-head">
           <h2>Focus</h2>
           <div class="cards">
             <div class="card">
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 20a6.5 6.5 0 0 0-2.5-5.1"/></svg></div>
+              <h3>Technology leadership</h3>
+              <p>Clear technology direction, strong engineering teams and predictable delivery on business priorities.</p>
+            </div>
+            <div class="card">
               <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12.5 3.5 3.5 0 0 0 6 19h11.5Z"/></svg></div>
               <h3>Cloud &amp; SaaS</h3>
-              <p>Launched managed cloud services and the operating model behind them; expanded the platform's SaaS capabilities.</p>
+              <p>Scalable enterprise platforms, reliable operations and cloud infrastructure that supports business growth.</p>
             </div>
             <div class="card">
               <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <h3>AI-native engineering</h3>
-              <p>AI Innovation Team, AI-based QA across seven workstreams, AI in support and alerting — plus the AI SDK and MCP integration.</p>
+              <h3>AI-enabled engineering</h3>
+              <p>AI integrated into software development, with measurable impact on engineering productivity and business results.</p>
             </div>
             <div class="card">
               <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
               <h3>Operational efficiency</h3>
-              <p>Consolidated five delivery units into three, cut cloud spend by 30% and aligned engineering capacity with business priorities.</p>
-            </div>
-            <div class="card">
-              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
-              <h3>M&amp;A &amp; due diligence</h3>
-              <p>Technology assessments of 6+ acquisition targets and a repeatable due diligence framework for decision-making.</p>
+              <p>Leaner structures, lower costs and engineering focused on what matters to the business.</p>
             </div>
           </div>
         </div>
@@ -303,7 +273,7 @@
                   <li><b>VP Technology</b> · 2019–2021</li>
                   <li><b>VP of Engineering</b> · 2015–2018</li>
                 </ul>
-                <p>Executive leadership team member since 2016. Reported to the CEO, led eight technology leaders across engineering, architecture, cloud operations, support, security and quality. Gartner Magic Quadrant Leader for Digital Commerce, 2024.</p>
+                <p>Led Spryker's international technology organisation through expansion, restructuring and AI adoption, with responsibility for engineering, architecture, cloud operations, global support, security and quality.</p>
               </div>
             </li>
             <li>
@@ -328,9 +298,9 @@
         <div class="section-head">
           <h2>Languages</h2>
           <div class="pills">
-            <span class="pill">German — native-level</span>
-            <span class="pill">Russian — native</span>
-            <span class="pill">English — professional</span>
+            <span class="pill">German</span>
+            <span class="pill">English</span>
+            <span class="pill">Russian</span>
           </div>
         </div>
       </section>
