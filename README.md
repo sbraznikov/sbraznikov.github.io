@@ -2,7 +2,7 @@
 
 One-page personal site: profile, focus areas, experience and contact.
 
-Plain HTML and CSS in a single file. No build step and no dependencies apart from the Inter Tight font, which loads from Google Fonts. The page supports light and dark mode and is responsive.
+Plain HTML and CSS in a single file. No build step and no external dependencies. The Inter Tight font is self-hosted, and analytics run on Plausible (cookieless). The page supports light and dark mode and is responsive.
 
 ## Structure
 
@@ -10,6 +10,9 @@ Plain HTML and CSS in a single file. No build step and no dependencies apart fro
 index.html                   the whole page (markup + styles)
 assets/sergej-braznikov.jpg  portrait
 assets/icon.svg              favicon
+assets/apple-touch-icon.png  home screen icon
+assets/og-image.jpg          link preview image (1200×630)
+assets/fonts/                Inter Tight, self-hosted (SIL OFL)
 ```
 
 ## Local preview
