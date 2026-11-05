@@ -221,6 +221,54 @@
       .timeline li { grid-template-columns: 1fr; gap: 6px; }
       section { padding: 56px 0; }
     }
+    .print-contact { display: none; }
+
+    /* Print: light, compact A4 layout without interactive elements */
+    @media print {
+      @page { size: A4; margin: 12mm 15mm; }
+      :root {
+        --bg: #ffffff; --surface: #ffffff; --ink: #16181d; --muted: #4a4f5b;
+        --line: #dcdad3; --accent: #1f6f5c; --accent-soft: #e3efe9;
+      }
+      * { box-shadow: none !important; transition: none !important; }
+      html, body { background: #fff; font-size: 10pt; line-height: 1.45; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; }
+      .wrap { max-width: none; padding: 0; }
+
+      header.top, .actions, .portrait .tag, footer, .card .ico, .contact { display: none; }
+      .print-contact { display: block; margin: 2.5mm 0 0; font-size: 9.5pt; font-weight: 500; color: var(--accent); }
+      .langs .section-head { display: flex; align-items: center; gap: 4mm; }
+      .langs .section-head > h2 { margin: 0; }
+      .langs { padding-bottom: 0; }
+
+      .hero { grid-template-columns: 1fr 38mm; gap: 10mm; padding: 0 0 5mm; align-items: center; }
+      .eyebrow { font-size: 8.5pt; padding: 1mm 3mm; }
+      h1 { font-size: 30pt; margin: 3mm 0 2.5mm; }
+      h1 br { display: none; }
+      .role { font-size: 11pt; max-width: none; margin: 0; }
+      .portrait { aspect-ratio: 1 / 1; border-radius: 4mm; width: 38mm; }
+
+      section { padding: 4mm 0; break-inside: auto; }
+      .section-head { display: block; }
+      .section-head > h2 { margin: 0 0 3mm; }
+      h2 { font-size: 8pt; margin-top: 1mm; }
+
+      .cards { gap: 2.5mm; }
+      .card { padding: 3mm 4mm; border-radius: 3mm; break-inside: avoid; }
+      .card h3 { font-size: 10.5pt; margin-bottom: 1mm; }
+      .card p { font-size: 9.5pt; }
+
+      .timeline > li { grid-template-columns: 24mm 1fr; gap: 4mm; padding: 2.5mm 0; break-inside: avoid; }
+      .roles li { padding: 0; }
+      .when { font-size: 9pt; }
+      .what h3 { font-size: 10.5pt; }
+      .what p, .roles { font-size: 9.5pt; margin-top: 1mm; }
+
+      .pills { margin-top: 0; }
+      .pill { font-size: 9pt; padding: 0.8mm 3mm; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       * { transition: none !important; }
@@ -248,8 +296,9 @@
       <div class="hero">
         <div>
           <span class="eyebrow">Berlin, Germany</span>
-          <h1>Sergej<br>Braznikov</h1>
+          <h1>Sergej <br>Braznikov</h1>
           <p class="role"><strong>Technology executive &amp; CTO.</strong> Building and scaling international engineering organisations in enterprise software, with a focus on cloud, AI and operational efficiency.</p>
+          <p class="print-contact">sergej.braznikov@gmail.com · linkedin.com/in/sbraznikov · sbraznikov.github.io</p>
           <div class="actions">
             <a class="btn primary" href="mailto:sergej.braznikov@gmail.com">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -341,7 +390,7 @@
         </div>
       </section>
 
-      <section>
+      <section class="langs">
         <div class="section-head">
           <h2>Languages</h2>
           <div class="pills">
